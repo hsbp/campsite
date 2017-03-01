@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block body %}
+<h2>Tickets</h2>
+<p>Tickets can be registered
+
+<a href="https://ticket.hsbp.org/camppp7e1">in our ticketing system</a>
+and are <strong>required to participate</strong> at the event &ndash; even
+for speakers and/or organizers. <strong>Registration is free</strong> and
+submitting personal information	is not required. Payment is done on your
+last day of participation, which is 1/n-th of the total costs of the camp,
+where n is the number of participants.
+
+Every piece of information you submit to our ticketing system will be destroyed by
+the end of the event.</p>
+
+<p>Although registration requires no personal data to be entered, <!-- we have
+an <a href="https://ticket.hsbp.org:42443/camppp7e0">SSL-protected interface</a>.
+We don't believe in the commercial CA system, so you have two options to verify
+the integrity of the HTTPS connection. --> you can <!-- either install the
+<a href="http://www.cacert.org/index.php?id=3">CAcert root certificate</a>
+and/or --> verify the <a href="https://ticket.hsbp.org/cert">checksum of the certificate</a>
+signed by a subset of the organizers using PGP.</p>
+{% endblock %}

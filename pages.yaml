@@ -1,0 +1,8 @@
+ - title: Home
+   file: index.html
+ - title: Call for Participation
+   file: cfp.html
+ - title: Tickets
+   file: tickets.html
+ - title: How to...
+   file: howto.html

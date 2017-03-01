@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Camp++</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="static/camp.css" type="text/css">
+	</head>
+	<body>
+		<div class="header"><img src="static/h1.png"></div>
+		<div class="wrapper">
+			<div class="content">
+				<h1>Camp++, the fifth H.A.C.K. camp</h1>
+				<ul id="menu">
+					{% for page in pages %}
+					<li>
+						{% if page != active %}<a href="{{ page.file }}">{% endif %}
+							{{ page.title }}{% if page != active %}</a>{% endif %}
+					</li>
+					{% endfor %}
+				</ul>
+				{% block body %}
+				<div>
+				Please join us for the fifth time to our annual outdoor geekery. 
+				</div>
+				<div id="datelocation">
+					<h2>Date</h2>
+					The camp will start on
+					Thursday <strong>6th July 2017</strong>, and will 
+					end on Sunday <strong>9th July 2017</strong>.
+					<a href="tickets.html">Register your ticket now!</a>
+					<h2>Location</h2>
+					<a href="https://tools.wmflabs.org/geohack/geohack.php?params=47_45_2_N_18_5_38_E_type:landmark" target="_blank">Fort Monostor, Komárom, Hungary</a>
+					A fantastic location in a late 19<sup>th</sup> century fort that was planned to house 200.000 soldiers at a time, then became one of the biggest munitions depots in Central Europe during the Cold War.
+				</div>
+				<div id="programcontact">
+					<h2>Program</h2>
+					<ul>
+						<li>talks regarding security, privacy, and hacking</li>
+						<li>workshops</li>
+						<li>beer and Club-Mate</li>
+					</ul>
+					for more details check the <a href="/2016/pp7e0/fahrplan">schedule from last year</a>.
+					<h2>Contact</h2>
+					<ul>
+						<li>E-mail: <a href="mailto:camppp@hsbp.org">camppp@hsbp.org</a></li>
+						<li>IRC: #camp++ @ <a href="https://chat.mibbit.com/">IRCnet</a></li>
+						<!--<li>Facebook: <a href="https://www.facebook.com/events/1176720609059533">event</a></li>-->
+					</ul>
+					<h2>Ticket Prices</h2>
+					Will be done like <a href="/2013/zer0/ticket-prices.html">first year</a>, should be less than 80 EUR/person.
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

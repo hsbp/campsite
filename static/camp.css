@@ -1,0 +1,63 @@
+@font-face {
+	font-family: 'Special Elite';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Special Elite'), local('SpecialElite-Regular'), url(specialelite.woff) format('woff');
+}
+
+.header {
+	background: url(2730629-campfire.gif);
+	background-position: -240px 0px;
+}
+
+body {
+	margin: 0;
+	background: url(2730629-campfire.gif) no-repeat #010032 -240px 0px;
+}
+
+.wrapper { background: #020421; }
+
+.content {
+	color: white;
+	margin: 0 auto 48px auto;
+	background: #020421;
+	border: #ffaf42 2px solid;
+	padding: 0 20px 20px 20px;
+	font-family: 'Special Elite', monospace;
+	text-align: justify;
+	overflow: auto;
+
+}
+
+@media screen and (min-width: 960px) {
+	.content {
+		margin-right: 270px;
+	}
+	.wrapper {
+		margin-left: 270px;
+	}
+}
+
+a {	color: #ffaf42; }
+
+#programcontact, #datelocation {
+	width: 48%;
+}
+#datelocation {
+	float: left;
+}
+#programcontact {
+	float: right;
+}
+#menu {
+	list-style: none;
+	padding-left: 0;
+}
+#menu li {
+	display: inline;
+	padding-right: 12pt;
+}
+#trainfortmap {
+	display: block;
+	margin: 12pt auto 12pt auto;
+}
