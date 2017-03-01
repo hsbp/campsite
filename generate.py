@@ -1,5 +1,6 @@
 from os import path, mkdir
 from shutil import copytree, rmtree
+from datetime import datetime
 import codecs
 
 from jinja2 import Environment, PackageLoader
@@ -18,9 +19,16 @@ if path.exists(OUTPUT):
 
 mkdir(OUTPUT)
 
+with open('.git/HEAD') as f:
+    _, ref = f.read().rstrip().split(' ', 1)
+
+with open('.git/' + ref) as f:
+    commit = f.read().rstrip()
+
 for page in pages:
     template = env.get_template(page['file'])
-    html = template.render(pages=pages, active=page)
+    html = template.render(pages=pages, active=page, timestamp=datetime.now(),
+            commit=commit)
     with codecs.open(path.join(OUTPUT, page['file']), 'wb', 'utf-8') as f:
         f.write(html)
 
