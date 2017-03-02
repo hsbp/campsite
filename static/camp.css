@@ -15,7 +15,7 @@ body {
 	background: url(2730629-campfire.gif) no-repeat #010032 -240px 0px;
 }
 
-.wrapper { background: #020421; }
+.wrapper { background: url(grad.png) bottom repeat-x #020421; }
 
 .content {
 	color: white;
