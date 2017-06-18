@@ -26,6 +26,8 @@ with open('.git/' + ref) as f:
     commit = f.read().rstrip()
 
 for page in pages:
+    if not page['file'].endswith('.html'):
+        continue
     template = env.get_template(page['file'])
     html = template.render(pages=pages, active=page, timestamp=datetime.now(),
             commit=commit)
