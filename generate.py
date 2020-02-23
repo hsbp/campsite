@@ -10,7 +10,7 @@ OUTPUT = 'output'
 STATIC = 'static'
 
 with open('pages.yaml') as f:
-    pages = yaml.load(f)
+    pages = yaml.load(f, Loader=yaml.BaseLoader)
 
 env = Environment(loader=PackageLoader('__main__', 'templates'))
 
