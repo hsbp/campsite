@@ -12,7 +12,7 @@ STATIC = 'static'
 with open('pages.yaml') as f:
     pages = yaml.load(f, Loader=yaml.BaseLoader)
 
-env = Environment(loader=PackageLoader('__main__', 'templates'))
+env = Environment(loader=PackageLoader('generate'))
 
 if path.exists(OUTPUT):
     rmtree(OUTPUT)
