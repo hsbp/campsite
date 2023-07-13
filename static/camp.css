@@ -5,6 +5,12 @@
 	src: local('Special Elite'), local('SpecialElite-Regular'), url(specialelite.woff) format('woff');
 }
 
+:root {
+	--margin-toggle: 0;
+	--base-margin: 0;
+	--extended-margin: 20vw;
+}
+
 .header {
 	background: url(2730629-campfire.gif);
 	background-position: -240px 0px;
@@ -15,40 +21,55 @@ body {
 	background: url(2730629-campfire.gif) no-repeat #010032 -240px 0px;
 }
 
-.wrapper { background: url(grad.png) bottom repeat-x #020421; }
+.wrapper {
+	padding: 0 0 48px 0;
+	display: flex;
+	justify-content: center;
+	/* Allow more than 270px if screen is big enough */
+	--margin-base: max(var(--base-margin), var(--extended-margin));
+	--margin-toggled: calc(var(--margin-base) * var(--margin-toggle));
+	padding-left: var(--margin-toggled);
+	padding-right: var(--margin-toggled);
+}
 
 .content {
+	background: url(grad.png) bottom repeat-x #020421;
 	color: white;
-	margin: 0 auto 48px auto;
 	background: #020421;
 	border: #ffaf42 2px solid;
 	padding: 0 20px 20px 20px;
 	font-family: 'Special Elite', monospace;
 	text-align: justify;
 	overflow: auto;
+	word-wrap: break-word;
+}
 
+.flexbox {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap !important;
+	flex-direction: row;
+}
+
+.flexbox > * {
+	word-wrap: break-word;
+	padding: 10px;
+	width: 16em;
+	flex-grow: 1;
 }
 
 @media screen and (min-width: 960px) {
-	.content {
-		margin-right: 270px;
-	}
-	.wrapper {
-		margin-left: 270px;
-	}
+   :root {
+   	/* Once we're at 960px, show entire campfire */
+   	--margin-toggle: 1;
+   	--base-margin: 270px;
+   }
 }
 
-a {	color: #ffaf42; }
+a {
+	color: #ffaf42;
+}
 
-#programcontact, #datelocation {
-	width: 48%;
-}
-#datelocation {
-	float: left;
-}
-#programcontact {
-	float: right;
-}
 #menu {
 	list-style: none;
 	padding-left: 0;
