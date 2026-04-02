@@ -31,7 +31,7 @@ for page in pages:
     template = env.get_template(page['file'])
     html = template.render(pages=pages, active=page, timestamp=datetime.now(),
             commit=commit)
-    with codecs.open(path.join(OUTPUT, page['file']), 'wb', 'utf-8') as f:
+    with open(path.join(OUTPUT, page['file']), 'w', encoding='utf-8') as f:
         f.write(html)
 
 copytree(STATIC, path.join(OUTPUT, STATIC))
