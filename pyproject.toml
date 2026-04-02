@@ -1,0 +1,11 @@
+[project]
+name = "campsite"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "jinja2==3.1.4",
+    "markupsafe==2.1.2",
+    "pyyaml==6.0.1",
+]
